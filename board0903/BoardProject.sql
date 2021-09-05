@@ -8,6 +8,7 @@ CREATE TABLE MEM(
 	PW varchar(20) NOT NULL
 );
 insert into MEM values ('qwe','1212');
+insert into MEM values ('asd','1212');
 
 CREATE TABLE BOARD(
 	NUM INT PRIMARY KEY,

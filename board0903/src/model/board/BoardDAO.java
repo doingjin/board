@@ -12,7 +12,7 @@ public class BoardDAO {
 	
 	String SQL_SELECTALL="SELECT * FROM BOARD ORDER BY NUM DESC";
 	String SQL_SELECTONE="SELECT * FROM BOARD WHERE NUM=?";
-	String SQL_INSERT="INSERT INTO BOARD VALUES (SELECT NVL(MAX(NUM),0)+1 FROM BOARD,?,?,?,SYSDATE)";
+	String SQL_INSERT="INSERT INTO BOARD VALUES ((SELECT NVL(MAX(NUM),0)+1 FROM BOARD),?,?,?,SYSDATE)";
 	String SQL_UPDATE="UPDATE BOARD SET TITLE=?, CONTENT=? WHERE NUM=?";
 	String SQL_DELETE="DELETE FROM BOARD WHERE NUM=?";
 	
@@ -71,7 +71,7 @@ public class BoardDAO {
 		return data;
 	}
 	
-	// SQL_INSERT="INSERT INTO BOARD VALUES (SELECT NVL(MAX(NUM),0)+1 FROM BOARD,?,?,?,SYSDATE)"
+	// SQL_INSERT="INSERT INTO BOARD VALUES ((SELECT NVL(MAX(NUM),0)+1 FROM BOARD),?,?,?,SYSDATE)"
 	public boolean addBoard(BoardVO vo) {
 		boolean res=false;
 		conn=JDBC.connect();
@@ -80,6 +80,7 @@ public class BoardDAO {
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getTitle());
 			pstmt.setString(3, vo.getContent());
+			pstmt.executeUpdate();
 			res=true;
 		} catch (SQLException e) {
 			System.out.println("addBoard()");
@@ -99,6 +100,7 @@ public class BoardDAO {
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getContent());
 			pstmt.setInt(3, vo.getNum());
+			pstmt.executeUpdate();
 			res=true;
 		} catch (SQLException e) {
 			System.out.println("editBoard()");
@@ -116,6 +118,7 @@ public class BoardDAO {
 		try {
 			pstmt=conn.prepareStatement(SQL_DELETE);
 			pstmt.setInt(1, vo.getNum());
+			pstmt.executeUpdate();
 			res=true;
 		} catch (SQLException e) {
 			System.out.println("deleteBoard()");

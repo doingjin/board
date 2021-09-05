@@ -17,9 +17,9 @@ public class MemVO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	@Override
+	/*@Override
 	public String toString() {
 		return "MemVO [id=" + id + ", pw=" + pw + "]";
-	}
+	}*/
 		
 }
