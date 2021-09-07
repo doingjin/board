@@ -22,7 +22,7 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<a href="index.html" class="logo"><strong>Forty</strong> <span>by
+			<a href="index.jsp" class="logo"><strong>HELLO</strong> <span>by
 					HTML5 UP</span></a>
 			<nav>
 				<a href="#menu">Menu</a>
@@ -32,7 +32,7 @@
 		<!-- Menu -->
 		<nav id="menu">
 			<ul class="links">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.jsp">Home</a></li>
 				<li><a href="landing.html">Landing</a></li>
 				<li><a href="generic.html">Generic</a></li>
 				<li><a href="elements.html">Elements</a></li>
@@ -49,14 +49,14 @@
 		<section id="banner" class="major">
 			<div class="inner">
 				<header class="major">
-					<h1>Welcome to my Page! :)</h1>
+					<h1>Sign In</h1>
 				</header>
 				<div class="content">
 					<p>
 						A responsive site template designed by HTML5 UP<br /> and
 						released under the Creative Commons.
 					</p>
-					
+					<button class="primary" onclick="location.href='signup.jsp'">Sign Up</button>
 				</div>
 			</div>
 		</section>
@@ -87,12 +87,13 @@
 							<li><input type="reset" value="Clear" /></li>
 						</ul>
 					</form>
+			
 					<button class="button primary fit" onclick="location.href='controlBoard.jsp?action=getlist';">Main</button>
 				</section>
 				
 			</div>
 		</section>
-
+		
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">

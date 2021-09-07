@@ -34,7 +34,8 @@
 		if(memdao.addMem(memvo)){
 			pageContext.forward("login.jsp");
 		} else {
-			throw new Exception("controlUser_signup 오류!");
+			// throw new Exception("controlUser_signup 오류!");
+			out.println("<script>alert('이미 사용 중인 아이디입니다.');history.go(-1);</script>");
 		}
 	} else if(action.equals("editPw")){
 		String pwnow=request.getParameter("pwnow");

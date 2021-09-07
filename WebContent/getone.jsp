@@ -28,7 +28,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+						<a href="index.jsp" class="logo"><strong>HELLO</strong> <span>by HTML5 UP</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -65,7 +65,8 @@
 														</dd>
 														<dt>내용</dt>
 														<dd>
-															<p>${data.getContent()}</p>
+															
+															<p><textarea rows="6" readonly>${data.getContent()}</textarea></p>
 														</dd>
 														<dt>작성일</dt>
 														<dd>

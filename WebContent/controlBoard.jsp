@@ -10,14 +10,14 @@
 	String ctgr=request.getParameter("ctgr");
 	String search=request.getParameter("search");
 	if(action.equals("getlist")){
-		System.out.println(ctgr);
-		System.out.println(search);
+		//System.out.println(ctgr);
+		//System.out.println(search);
 		ArrayList<BoardVO> datas=null;
 		if(ctgr==""||search==null){
 			datas=brddao.getBoardList();
 			//System.out.println("확");
 		} else {
-			datas=brddao.searchBoard(ctgr, search);
+			datas=brddao.searchBoard(ctgr,search);
 			//System.out.println("인");
 		}
 		request.setAttribute("datas", datas);
